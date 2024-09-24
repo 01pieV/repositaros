@@ -43,5 +43,29 @@ fun2(5)
     # b.)
 def fun2(a):
     for i in range(1, a+1):
-        print()
+        if i < a:
+            print(i,end =',')
+        else:
+            print(i)
 fun2(5)
+
+# uloha 3.
+def fun3(a):
+    for i in range (5, a+1, 2):
+        print(i)
+fun3(15)
+
+# uloha 4.
+
+def fun4(a):
+    for i in range(1, a+1):
+        print(i, i**2 )
+fun4(9)
+
+# uloha 5.
+import math
+def fun5(a,b):
+    for i in range(a,b+1):
+        odmocninca = round(math.sqrt(i), 2)
+        print(odmocninca)
+fun5(1,6)
