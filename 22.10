@@ -72,3 +72,19 @@ for i in range(0,100):
     temp = random.randrange(1, 7)
     jozo[temp - 1] = jozo[temp - 1] + 1 # do hranatyh zatvoriek sa dáva index
 print(jozo)
+
+
+
+a = float(input("Zadaj a:"))
+b = float(input("Zadaj b:"))
+c = float(input("Zadaj c:"))
+D = b ** 2 - 4*a*c
+if D > 0:
+    x1 = (-b+(D**0,5))/(2*a)
+    x2 = (-b-(D**0,5))/(2*a)
+    print(x1,x2)
+elif D == 0:
+    x = -b/(2*a)
+    print(x)
+else:
+    print("Rovnica nemá riešenie")
