@@ -60,3 +60,15 @@ print(f"3:{c}")
 print(f"4:{d}")
 print(f"5:{e}")
 print(f"6:{f}")
+
+5: (jednoduchsie)
+import random
+jozo = [] # vytvoril som zoznam, ktori je vsak PRAZDNY
+for i in range(1,7):
+    jozo.append(0)
+print(jozo)
+
+for i in range(0,100):
+    temp = random.randrange(1, 7)
+    jozo[temp - 1] = jozo[temp - 1] + 1 # do hranatyh zatvoriek sa dáva index
+print(jozo)
