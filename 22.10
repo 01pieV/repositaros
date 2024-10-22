@@ -4,3 +4,14 @@ def fun1(a,b):
             print(i)
 fun1(42,100)
 
+
+
+#nacitat cisla pokial ich sucet nieje vacsi ako 500 /
+sucet = 0
+a = 0
+while sucet < 500:
+    temp = int(input("Zadaj mi celé číslo: "))
+    if temp % 2 ==0: # iba sucet parnych cisel
+        a +=1
+        sucet = (sucet + temp)
+print(sucet/a)
