@@ -1,0 +1,6 @@
+def fun1(a,b):
+    for i in range(a, b+1,): # for i in range(a, b+1, 2):
+        if i % 2 == 0: # toto tu nemusi byt ak # for i in range(a, b+1, 2):
+            print(i)
+fun1(42,100)
+
