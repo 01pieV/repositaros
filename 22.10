@@ -21,3 +21,12 @@ import random
 for i in range(0,101):
     temp = random.randrange(1,11)
     print(temp)
+
+
+import random
+sucet = 0
+for i in range(0,101):
+    temp = random.randrange(1,11)
+    sucet += temp
+print(sucet)
+print(sucet/100)
