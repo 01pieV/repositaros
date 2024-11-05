@@ -1,0 +1,40 @@
+b = "ahoj1#^"
+print(len(b))
+for i in b:
+    print(i)
+
+for i in range(0,len(b)):
+    print(i,b[i])
+
+for index, hodnota in enumerate(b):
+    print(index, hodnota)
+
+
+a = input("retazec: ")
+print(a.count("c"))
+
+
+
+a = input("retazec: ")
+na = ""
+for znak in a:
+    if znak == "a":
+        na = na + "e" # pozor ten plus znamená prilepenia znaku, nie spočtanie
+    else:
+        na += znak
+print(na)
+
+
+import random
+dlzka = int(input("Ako dlhé heslo: "))
+samohlasky = "aeiouy"
+spoluhlasky = "qwrtpsdfghjklzxcvbnm"
+nr = ""
+for i in range(0,dlzka):
+    if i%2 == 0:
+        nr += random.choice(samohlasky)
+    else:
+        nr += random.choice(spoluhlasky)
+print(nr)
+
+
