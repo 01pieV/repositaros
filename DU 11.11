@@ -1,0 +1,17 @@
+slovo = str(input("Aké je slovo: "))
+samohlasky = "aeiouy"
+spoluhlasky = "qwrtpsdfghjklzxcvbnm"
+nove = ""
+i = 0
+while i < len(slovo):
+    a = slovo[i]
+    if a in samohlasky:
+        nove += a
+        i += 3
+    elif a in spoluhlasky:
+        nove += a
+        i +=2
+    else:
+        nove += " "
+        i+=1
+print(nove)
