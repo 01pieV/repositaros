@@ -1,0 +1,9 @@
+fero = "ssd"
+for i in range(0,len(fero)):
+    print(fero[i])
+
+for i in fero:
+    print(i)
+
+for key, content in enumerate(fero):
+    print(key, content)
