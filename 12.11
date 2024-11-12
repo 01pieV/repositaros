@@ -7,3 +7,40 @@ for i in fero:
 
 for key, content in enumerate(fero):
     print(key, content)
+
+
+
+#rezy
+fero = "abcd"
+#jano = fero[start:koniec:krok]
+jano = fero[1: : ] # pokial vynechám prvé číslo tak je hodnota 0 / pokial vynechám stredné číslo tak je hodnota maximálna dĺžka retazca
+# ak na posledné miesto dáme -1 retazec pojde odzadu
+print(jano)
+
+
+
+
+fero = "abcdefgh"
+peto = "radar"
+niko = "jelenovipivonelej"
+romas = "kobylamamalybok"
+
+if niko==niko[::-1]:
+    print('Je to palindrom.')
+
+
+
+
+a = input("napis mi nieco: ")
+for i in range(0,len(a)+1):
+    print(a[:i:])
+
+
+
+
+
+Dú (aby slovo postupne vypisoval odzadu)
+
+
+
+
