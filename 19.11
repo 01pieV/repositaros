@@ -18,3 +18,13 @@ def fun1(a):
     print(f"Samohlasok je {samoh} a spoluhlasok je {spol}.")
 
 fun1("Narodil som sa v roku 2001")
+
+
+
+def fun1(a):
+    pozic = a.rfind(".")
+    prip = a[pozic+1::]
+    print(prip)
+
+
+print(fun1("Ahoj.txt"))
