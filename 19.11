@@ -32,3 +32,18 @@ print(fun1("Ahoj.txt"))
 
 
 vet[::-1]
+
+
+
+
+def permutacia():
+    ret = "0123"
+    a= 0
+    for i in ret:
+        for j in ret:
+            for k in ret:
+                for l in ret:
+                    print(i,j,k,l)
+                    a += 1
+    print(a)
+permutacia()
