@@ -1,0 +1,4 @@
+def fun3(a):
+    return a.count("?") + a.count("!") + a.count(".")
+
+print(fun3("Ahoj? cau!"))
