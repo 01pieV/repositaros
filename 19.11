@@ -28,3 +28,7 @@ def fun1(a):
 
 
 print(fun1("Ahoj.txt"))
+
+
+
+vet[::-1]
