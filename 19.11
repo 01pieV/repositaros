@@ -2,3 +2,19 @@ def fun3(a):
     return a.count("?") + a.count("!") + a.count(".")
 
 print(fun3("Ahoj? cau!"))
+
+
+
+def fun1(a):
+    spol = 0
+    samoh = 0
+    samohlasky = "aeiouy"
+    spoluhlasky = "qwrtpsdfghjklzxcvbnm"
+    for i in a:
+        if i.lower() in samohlasky:
+            samoh += 1
+        elif i.lower() in spoluhlasky:
+            spol += 1
+    print(f"Samohlasok je {samoh} a spoluhlasok je {spol}.")
+
+fun1("Narodil som sa v roku 2001")
