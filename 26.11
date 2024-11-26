@@ -39,3 +39,28 @@ def checkio(heslo):
         return False
 
 assert checkio("ahAudwjd8s4") == True
+
+
+
+def checkio2(heslo):
+    if len(heslo) >= 10:
+        status_digit = False
+        status_lower = False
+        status_ascii = True
+        status_upper = False
+        for i in heslo:
+            if i.isdigit():
+                status_digit = True
+            if i.islower():
+                status_lower = True
+            if i.isupper():
+                status_upper = True
+            if not(i.isascii()):
+                status_ascii = False
+        return status_digit and status_lower and status_upper and status_ascii # musia platit vsetky, 
+        # keby sme tam dali OR staci aby TRUE bolo iba jedno
+
+    else:
+        return False
+
+assert checkio2("ahAudwjd8s4") == True
