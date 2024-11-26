@@ -1,3 +1,4 @@
+
 # viac alebo prave 10 znakov
 # má aspon jedno cislo
 # najmenej jedno velke a jedno mae pismeno
@@ -20,10 +21,10 @@ def checkio(heslo):
                     if i.islower():
                         status2 = True
                 if status2:
-                    status3 = False
+                    status3 = True
                     for i in heslo:
-                        if i.isascii():
-                            status3 = True
+                        if not(i.isascii()):
+                            status3 = False
                     if status3:
                         return True
                     else:
