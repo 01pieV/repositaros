@@ -26,3 +26,43 @@ def sifrovacka2(text, kluc):
 
 pok = predkluc(text, kluc)
 print(sifrovacka2(text, pok))
+
+
+
+
+
+
+
+# text files
+
+# vsetky premenne sa vytvaraju v pameti RAM, je energeticky závislá (bez prúdu neudrží hodnoty)
+# na to aby sme vedeli udržať hodnoty sa musia uložiť do súboru (energeticky nezávislé)
+# budeme sa učiť v najjednoduchšom textovom súbore (môžme si ho predstaviť ako jeden dlhý string)
+# ahoj /n ((enter) - backsalsh) peter
+
+
+
+
+
+fr = open("textový.txt", "r", encoding="utf-8") # namiesto r je aj w
+1.
+niekoľko spôsobov ako procovať s obsahom súboru
+for riadok in fr:
+    print(riadok, end="") # keď dáme end bez medzier
+
+
+
+2.
+#potrebujem inak spracovat prvy riadok a inak zvysok
+prvy_riadok = fr.readline()
+print(prvy_riadok)
+#porobim s prvym riadkom to co potrebujem a precitam zvysok
+for riadok in fr:
+    print(riadok)
+
+
+3.
+zoznam = fr.readlines()
+print(zoznam)
+
+
