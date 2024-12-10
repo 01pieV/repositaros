@@ -7,7 +7,6 @@ def sifra(what:str, offset:int):
             output += char
     return output
 
-print(sifra("abyz", 2))
 
 def predkluc(text, kluc):
     kolko = len(text) // len(kluc)
@@ -17,7 +16,6 @@ def predkluc(text, kluc):
 text = input("Zadaj text: ")
 kluc = input("Zadaj kluc: ")
 
-ret1 = predkluc(text, kluc)
 
 def sifrovacka2(text, kluc):
     output = ""
