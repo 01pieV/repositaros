@@ -74,7 +74,7 @@ fr = open("D:\škola\Downloads\words.txt", "r", encoding="utf-8") # absolutna ce
 counter = 0
 for riadok in fr:
     print(riadok.strip(), end = ".\n")
-    if riadok.count("E")>=1:
+    if riadok.count("E")>=1:        # if "E" in riadok:
         counter+=1
 print(counter)
 
