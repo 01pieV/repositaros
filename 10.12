@@ -1,0 +1,30 @@
+def sifra(what:str, offset:int):
+    output = ""
+    for char in what:
+        if(97 <= ord(char)<= 122):
+            output += chr((ord(char) - 97 + offset)% 26 +97)
+        else:
+            output += char
+    return output
+
+print(sifra("abyz", 2))
+
+def predkluc(text, kluc):
+    kolko = len(text) // len(kluc)
+    zvysok = len(text) % len(kluc)
+    return kluc * kolko + kluc[:zvysok:]
+
+text = input("Zadaj text: ")
+kluc = input("Zadaj kluc: ")
+
+ret1 = predkluc(text, kluc)
+
+def sifrovacka2(text, kluc):
+    output = ""
+    for i in range(0, len(text)):
+        posun = ord(kluc[i]) - 96
+        output += sifra(text[i], posun)
+    return output
+
+pok = predkluc(text, kluc)
+print(sifrovacka2(text, pok))
