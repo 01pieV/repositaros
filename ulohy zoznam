@@ -1,0 +1,7 @@
+# napis program ktorý nacita lubovolne slovo a vytvori zoznam ktory bude obsahovat ordinalne hodnoty jeho znakov
+
+a = input("Napíš premennú: ")
+zoz = []
+for i in range(0,len(a)):
+    zoz.append(ord(a[i]))
+print(zoz)
