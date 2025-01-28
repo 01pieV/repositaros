@@ -35,5 +35,14 @@ for i in cisla: # prejdem celý zoznam alebo taktiež možem použit: for i in r
         parne += 1
     else:
         neparne += 1
+najv = cisla[0]
+poz = 0
+for i in range(1,len(cisla)):
+    if najv < cisla[i]:
+        najv = cisla[i]
+        poz = i +1
 
-print(f"{cisla}, parnych: {parne},neparnych: {neparne}")
+print(f"{cisla}, parnych: {parne}, neparnych: {neparne}, najväčšie číslo: {najv} na pozícii {poz}")
+
+
+# du - vymysliet niaky algoritmus ktorý najde v zozname druhe najvacsie cislo
