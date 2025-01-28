@@ -5,3 +5,16 @@ zoz = []
 for i in range(0,len(a)):
     zoz.append(ord(a[i]))
 print(zoz)
+
+
+# napis program ktorý nacita lubovolne cisla a premenim ich do str
+import random
+zoz3 = []
+for i in range(0,10):
+    zoz3.append(random.randrange(0,10000))
+print(zoz3)
+
+vstup = ""
+for i in zoz3:
+    vstup += chr(i)
+print(vstup)
