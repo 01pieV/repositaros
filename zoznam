@@ -1,0 +1,39 @@
+# list (zoznam)
+# indexy - zoz [1], ....
+# zoznam je mutable
+# zoz [1] = "viki"
+# všetko co je v hranatých zátvorkách je typu list
+#Každá premená v okruhlých zátvorkách je typu tupla
+# Každá premená v kučeravých zátvorkách je typu dicionary
+# metóda = funkcia
+# pri zozname používame hlavne string
+
+# prázdny zoznam
+zoz = []
+zoz1 = list()
+zoz.append(7) # do zoznamu sa pridá 7 a bude mať jednu hodnotu
+zoz.pop() # vymaže hodnoty v liste
+
+
+
+# naplnanie veci do zoznamu
+str1 = "Ahoj joto tu som"
+zoznam = str1.split() # split = urcim znak podla coho sa má string rozdeliť
+
+# uloha vytvoriť prázdny zoznam a ptm do naplniť náhodnými 10 číslami od 1 do 100 a najst najvacsiu hodnotu
+
+import random
+cisla = []
+parne = 0
+neparne = 0
+for i in range(0,10):
+    cisla.append(random.randrange(1,100))
+for i in cisla: # prejdem celý zoznam alebo taktiež možem použit: for i in range(0, len(cisla))
+# for i in range(0, len(cisla)):
+#    if cisla[i] % 2 == 0:
+    if i % 2 == 0:
+        parne += 1
+    else:
+        neparne += 1
+
+print(f"{cisla}, parnych: {parne},neparnych: {neparne}")
