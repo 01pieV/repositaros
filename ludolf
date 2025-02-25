@@ -1,0 +1,17 @@
+
+def fak(a):
+    vysledok = 1
+    for i in range(1,a+1):
+        vysledok *= i
+    return vysledok
+
+def ludolf(k):
+    zoz = []
+    vysledok = 0
+    for i in range(0,k):
+        ramanujan = (fak(4*i))*(1103+(26390*i))/(fak(i)**4*396**(4*i))
+        vysledok += ramanujan
+        zoz.append(1/(2*2**0.5/9801 * vysledok))
+    return zoz
+
+print(ludolf(16))
