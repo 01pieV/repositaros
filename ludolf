@@ -26,3 +26,15 @@ def je_usp(a):
 
 print(je_usp([1,5,7,10,9,10,11]))
 
+
+
+
+#naprogramuj funckiu ak su vsetky hodnoty rovanke = True ak nie tak = False
+
+def fun1(a):
+    for i in range(0, len(a)-1):
+        if a[i] != a[i+1]:
+            return False
+    return True
+
+print(fun1([1,1,1,2]))
