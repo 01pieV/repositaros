@@ -1,0 +1,58 @@
+def avoids(slovo,forbw):
+    for i in slovo:
+        if i in forbw:
+            return False
+    return True
+
+slova = open("slova.txt", "r", encoding="UTF-8")
+ise = 0
+isnote = 0
+for i in slova:
+    temp = i.strip()
+    if avoids(temp,"ae"):
+        ise += 1
+    else:
+        isnote += 1
+print(ise,",",isnote)
+
+
+
+
+slova = open("slova.txt", "r", encoding="UTF-8")
+ise = 0
+isnote = 0
+for i in slova:
+    temp = i.strip()
+    if temp.count("e") >= 1:
+        ise += 1
+    else:
+        isnote += 1
+print(ise,",",isnote)
+
+
+def uses_only(word, pismena):
+    if len(word) == len(pismena):
+        if word in pismena:
+            return True
+    else:
+        return False
+
+
+def uses_only(word, pismena):
+    for letter in word:
+        if letter not in pismena:
+            return False
+        else:
+            return False
+
+slova = open("slova.txt", "r", encoding="UTF-8")
+ise = 0
+isnote = 0
+for i in slova:
+    temp = i.strip()
+    if uses_only(temp,"aeth"):
+        ise += 1
+        print(temp)
+    else:
+        isnote += 1
+print(ise,",",isnote)
