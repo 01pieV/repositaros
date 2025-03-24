@@ -58,3 +58,15 @@ for i in slova:
 print(ise,",",isnote)
 
 ci pismenka su v abecednom poradi
+
+a = "abcdefgh"
+predchadzajuce = 0
+for i in a:
+    cisla = ord(i)
+    if cisla > predchadzajuce:
+        predchadzajuce = cisla
+    else:
+        print("niesú")
+        break
+else:
+    print("Sú")
