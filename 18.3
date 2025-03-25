@@ -59,14 +59,16 @@ print(ise,",",isnote)
 
 ci pismenka su v abecednom poradi
 
-a = "abcdefgh"
+slova = open("slova.txt", "r", encoding="UTF-8")
+slovo = slovo.split()
 predchadzajuce = 0
-for i in a:
-    cisla = ord(i)
-    if cisla > predchadzajuce:
-        predchadzajuce = cisla
+for a in slovo:
+    for i in a:
+        cisla = ord(i)
+        if cisla > predchadzajuce:
+            predchadzajuce = cisla
+        else:
+            print("niesú")
+            break
     else:
-        print("niesú")
-        break
-else:
-    print("Sú")
+        print("Sú")
