@@ -72,3 +72,24 @@ for a in slovo:
             break
     else:
         print("Sú")
+
+
+
+
+
+slova = open("slova.txt", "r", encoding="UTF-8")
+def is_alpha(a):
+    slovo = slova.read().split()
+    for a in slovo:
+        predchadzajuce = 0
+        for i in a:
+            cisla = ord(i)
+            if cisla >= predchadzajuce:
+                predchadzajuce = cisla
+            else:
+                print("niesú")
+                break
+        else:
+            print("Sú")
+
+is_alpha(slova)
