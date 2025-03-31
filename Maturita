@@ -22,3 +22,29 @@ sirka, dlzka = first_line.strip().split() # su to stale str, pozor na to
 for riadok in fr:
     spracuj_riadok(riadok.strip())
 fw.close()
+
+
+
+
+
+
+
+
+Konverzia súboru 1:
+fr = open("ciernobiely_obrazok_1.txt", "r", encoding="utf-8")
+fw = open("konverzia_suboru_1_vystup.txt", "w", encoding="utf-8")
+def spracuj_riadok(riadok):
+    vystup = ""
+    for postup in range(0, len(riadok)-1,2):
+        spolu = 0
+        spolu = int(riadok[postup:postup + 2], 16)
+        if spolu >= 128:
+            vystup += "1 "
+        else:
+            vystup += "0 "
+    vystup = vystup.strip()
+    fw.write(vystup + "\n")
+first_line = fr.readline()
+fw.write(first_line)
+for riadok1 in fr:
+    spracuj_riadok(riadok1)
