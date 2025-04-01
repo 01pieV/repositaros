@@ -48,3 +48,43 @@ first_line = fr.readline()
 fw.write(first_line)
 for riadok1 in fr:
     spracuj_riadok(riadok1)
+
+
+
+
+
+
+from PIL import Image
+
+fr = open("ciernobiely_obrazok_1.txt", "r", encoding="utf-8")
+prvy_riadok = fr.readline()
+
+sirka, vyska = prvy_riadok.strip().split()
+
+sirka = int(sirka)
+vyska = int(vyska)
+
+
+obrazok = Image.new("RGB", (sirka,vyska), "white")
+pixels = obrazok.load() # vytvorí mapu pixelov
+y = 0
+for riadok in fr: # prechadzam subor po riadku
+    temp = riadok.strip() # odstrani enter
+    for x in range(0, min(len(temp), sirka * 2), 2):
+        hex_value = temp[x:x + 2]
+        if len(hex_value) == 2:  # Kontrola, či máme validnú dvojicu znakov
+            jozo = int(hex_value, 16)
+            pixels[x // 2, y] = (jozo, jozo, jozo)
+    y += 1
+
+
+
+# pixels[10,10] = (0,0,0)
+# pixels[10,11] = (0,0,0)
+# pixels[10,12] = (0,0,0)
+
+
+
+
+obrazok.show()
+obrazok.save("vystup.png")
