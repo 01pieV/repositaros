@@ -59,3 +59,29 @@ for y in range(0,vyska):
         for x in range(1, sirka+1,2):
             pixel[x, y] = (150, 150, 150)
 obrazok.show()
+
+
+
+
+
+
+from PIL import Image
+
+obr = Image.open("814-uecOoRL._AC_UF894,1000_QL80_.jpg")
+sirka,vyska = obr.size
+print(sirka,vyska)
+obr_novy = Image.new("RGB", (sirka,vyska), "White")
+pixels_old = obr.load()
+pixels_new = obr_novy.load()
+for y in range(vyska):
+    for x in range(sirka):
+        avg = (pixels_old[x,y][0] + pixels_old[x,y][1] + pixels_old[x,y][2])//3
+        # avg = (sum(pixels_old[x,y]))/3
+        pixels_new[x,y] = (avg,avg,avg)
+
+
+obr_novy.show()
+
+
+
+
