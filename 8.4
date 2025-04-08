@@ -85,3 +85,31 @@ obr_novy.show()
 
 
 
+from PIL import Image
+
+obr = Image.open("814-uecOoRL._AC_UF894,1000_QL80_.jpg")
+sirka,vyska = obr.size
+print(sirka,vyska)
+obr_1 = Image.new("RGB", (sirka,vyska), "White")
+obr_2 = Image.new("RGB", (sirka,vyska), "White")
+obr_3 = Image.new("RGB", (sirka,vyska), "White")
+pixels_old = obr.load()
+pixels_1 = obr_1.load()
+pixels_2 = obr_2.load()
+pixels_3 = obr_3.load()
+for y in range(vyska):
+    for x in range(sirka):
+        R = (pixels_old[x,y][0])
+        G = (pixels_old[x,y][1])
+        B = (pixels_old[x,y][2])
+        # avg = (sum(pixels_old[x,y]))/3
+        pixels_1[x,y] = (R,0,0)
+        pixels_2[x, y] = (0, G, 0)
+        pixels_3[x, y] = (0, 0, B)
+
+obr_1.show()
+obr_2.show()
+obr_3.show()
+
+
+
