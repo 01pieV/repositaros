@@ -1,0 +1,47 @@
+#steganografia
+    # schovavam cely obsah
+
+#šifrovanie - 2 typy - schovavam obsah
+    # symetricke - 1 kluc
+    # asymetricke - 2 kluce
+
+#vzdy sa to zakoduje na 8-bitov (ak je dlzka zakodovania mensia doplnime na zaciatok 0)
+#na zakodovanie jedneho znaku potrebujeme 8-bitov (8-pixelov)
+#meni sa posledna cofra v binarnom vyjadreni modrej farby
+#ak je cislo parne na jeho zapise sa to prejavi v binarnom zapise tak ze bude koncit 0 / ak neparne = 1
+# zo spravy z input vytvorim str kde budu 0 a 1
+
+
+# bin_sprava spracovavam v cykle
+# pre kazdu hodnotu budem musiet vypocitat jej poziciu v pixelmape
+# z tejto pozicie budem musiet zobrat tu tuplu farieb (niekde si ju zapametam)
+# zoberiem farbui reprezentujucu modru a podla hodnoty v cykle v binarke tejto farby tmenim poslednu cifru
+# pozor na petov hack "co sa deje s modrou ktora ma hodnotu 255" ?
+# takto zmeneni pixel vratim naspat
+# ked skonci cely cyklus obrazok savnem ako nove png
+
+
+# Dú - dokoncit drticku (spravu vzdy koncime #)
+
+sprava = input("Napíš správu: ")
+def kodovacka(sprava):
+    novy = []
+    for i in sprava:
+        binznak = bin(ord(i))[2::] #binznak = format(a, "08b")
+        if len(binznak) < 8:
+            chyba = 8 - len(binznak)
+            temp = chyba * "0" + binznak
+            for j in temp:
+                novy.append(int(j))
+    return novy
+
+from PIL import Image
+img = Image.open("boat.png")
+sirka,vyska = img.size
+pixels = img.load()
+
+
+def drticka(sprava):
+    bin_sprava = kodovacka(sprava)
+    
+kodovacka(sprava)
