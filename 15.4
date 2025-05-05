@@ -76,26 +76,28 @@ def dekodovacka(subor):
     pixels = img.load()
     sirka, vyska = img.size
 
-    bits = []
+    bit = []
     for y in range(vyska):
         for x in range(sirka):
             pixel = pixels[x, y]
             b = pixel[2]  # modrá zložka
-            bits.append(b)  # posledný bit
+            bit.append(b)  # posledný bit
 
     znaky = []
-    for i in range(0, len(bits), 8):
-        byte = bits[i:i+8]
+    for i in range(0, len(bit), 8):
+        binarna = bit[i:i+8]
         desiatkova = ""
-        for i in byte:
+        for i in binarna:
             desiatkova += str(i)
         cislo = int(desiatkova, 2)
         znak = chr(cislo)
         if znak == "#":
             break
         znaky.append(znak)
+        text = ""
+        for i in znaky:
+            text += i
 
-    print(znaky)
+    print(text)
 
-dekodovacka("a.png")
-
+dekodovacka("C:/Users/Admin/PycharmProjects/test/Du/ah.png")
