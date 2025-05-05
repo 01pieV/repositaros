@@ -35,7 +35,7 @@ def kodovacka(sprava):
 
 from PIL import Image
 
-img = Image.open("boat.png")
+img = Image.open("C:/Users/Admin/PycharmProjects/test/boat.png")
 sirka, vyska = img.size
 pixels = img.load()
 
@@ -44,7 +44,7 @@ def drticka(sprava):
     bin_sprava = kodovacka(sprava)
     for y in range(vyska):
         for x in range(sirka):
-            if a >= len(bin_sprava):
+            if index >= len(bin_sprava):
                 break
             pixel = pixels[x, y]
             if len(pixel) == 3:
@@ -59,10 +59,9 @@ def drticka(sprava):
                 pixels[x, y] = (r, g, b, a_kanal)
             index += 1
 
-    img.save("a.png")
+    img.save("ah.png")
 
 drticka(sprava)
-
 
 
 
