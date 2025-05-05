@@ -24,24 +24,41 @@
 # Dú - dokoncit drticku (spravu vzdy koncime #)
 
 sprava = input("Napíš správu: ")
+
 def kodovacka(sprava):
     novy = []
-    for i in sprava:
-        binznak = bin(ord(i))[2::] #binznak = format(a, "08b")
-        if len(binznak) < 8:
-            chyba = 8 - len(binznak)
-            temp = chyba * "0" + binznak
-            for j in temp:
-                novy.append(int(j))
+    for i in sprava + "#":
+        binznak = format(ord(i), "08b")
+        for j in binznak:
+            novy.append(int(j))
     return novy
 
 from PIL import Image
+
 img = Image.open("boat.png")
-sirka,vyska = img.size
+sirka, vyska = img.size
 pixels = img.load()
 
-
 def drticka(sprava):
+    index = 0
     bin_sprava = kodovacka(sprava)
-    
-kodovacka(sprava)
+    for y in range(vyska):
+        for x in range(sirka):
+            if a >= len(bin_sprava):
+                break
+            pixel = pixels[x, y]
+            if len(pixel) == 3:
+                r, g, b = pixel
+                a_kanal = None
+            else:
+                r, g, b, a_kanal = pixel
+            b = bin_sprava[index]
+            if a_kanal is None:
+                pixels[x, y] = (r, g, b)
+            else:
+                pixels[x, y] = (r, g, b, a_kanal)
+            index += 1
+
+    img.save("a.png")
+
+drticka(sprava)
