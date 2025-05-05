@@ -62,3 +62,40 @@ def drticka(sprava):
     img.save("a.png")
 
 drticka(sprava)
+
+
+
+
+
+
+
+from PIL import Image
+
+def dekodovacka(subor):
+    img = Image.open(subor)
+    pixels = img.load()
+    sirka, vyska = img.size
+
+    bits = []
+    for y in range(vyska):
+        for x in range(sirka):
+            pixel = pixels[x, y]
+            b = pixel[2]  # modrá zložka
+            bits.append(b)  # posledný bit
+
+    znaky = []
+    for i in range(0, len(bits), 8):
+        byte = bits[i:i+8]
+        desiatkova = ""
+        for i in byte:
+            desiatkova += str(i)
+        cislo = int(desiatkova, 2)
+        znak = chr(cislo)
+        if znak == "#":
+            break
+        znaky.append(znak)
+
+    print(znaky)
+
+dekodovacka("a.png")
+
