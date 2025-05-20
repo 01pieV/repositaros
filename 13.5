@@ -1,0 +1,42 @@
+import random
+import wave
+fr = open("input.txt", "r", encoding="UTF-8")
+fr2 = open("input2.txt", "r", encoding="UTF-8")
+firs_line = fr.readline() # nepotrebujeme prvy riadok
+firs = fr2.readline()
+manuet = []
+my_manuet = []
+for riadok in fr:
+    temp = riadok.strip().split(" ") # list
+    manuet.append(temp[1::])
+
+trio = []
+my_trio = []
+for riadok2 in fr2:
+    temp2 = riadok2.strip().split(" ") # list
+    trio.append(temp2[1::])
+
+
+for i in range(16):
+    c1 = random.randrange(0,6)
+    c2 = random.randrange(0, 6)
+    my_manuet.append(manuet[c1+c2][i])
+
+print(my_manuet)
+
+for i in range(16):
+    ci1 = random.randrange(0,6)
+    my_trio.append(trio[ci1][i])
+print(my_trio)
+
+nahravka = ["takty/M" + ton + ".wav" for ton in my_manuet]
+vystup = wave.open("takty/hudba.wav", "wb")
+
+nahravky1 = wave.open(nahravka[0])
+vystup.setparams(nahravky1.getparams())
+
+for i in range(len(nahravka)):
+    nahravky = wave.open(nahravka[i], 'rb')
+    vystup.writeframes(nahravka.readframes(nahravka.getnframes()))
+
+vystup.close()
