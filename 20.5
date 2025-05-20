@@ -1,0 +1,72 @@
+# Game of life
+    # 1.časť - tkinter
+    # 2.časť
+
+#2.časť
+
+width = 20
+height = 20
+playground = []
+
+def create_playground(width = 20, height=20):
+    temp = []
+    for x in range(height):
+        temp_in = []
+        for i in range(width):
+            temp_in.append(0)
+        temp.append(temp_in)
+    return temp
+
+def create_cells(list_of_cells, playground):
+    #[(4,5),(8,2)] = list_of_cells
+    for cell in list_of_cells:
+        playground[cell[1]][cell[0]] = 1
+
+def get_neighbors(x,y):
+    neighbors = 0
+    if (x!=0):
+        if(playground[y][x-1]==1):
+            neighbors += 1
+    if (x!=width-1):
+        if(playground[y][x+1]==1):
+            neighbors += 1
+    if (y!=0):
+        if(playground[y-1][x]==1):
+            neighbors += 1
+    if (y!=height-1):
+        if(playground[y+1][x]==1):
+            neighbors += 1
+    if (x!=0) and (y!=0):
+        if(playground[y-1][x-1]==1):
+            neighbors += 1
+    if (x!=0) and (y!=height-1):
+        if(playground[y+1][x-1]==1):
+            neighbors += 1
+    if (x!=width-1) and (y!=0):
+        if(playground[y-1][x+1]==1):
+            neighbors += 1
+    if (x!=width-1) and (y!=height-1):
+        if(playground[y+1][x+1]==1):
+            neighbors += 1
+    return neighbors
+
+def update_status(x,y):
+    neighbors = get_neighbors(x,y)
+    if playground[x][y] == 1:
+        if neighbors < 2:
+            playground[x][y] = 0
+        elif neighbors == 2 or neighbors == 3:
+            playground[x][y] = 1
+        elif neighbors > 3:
+            playground[x][y] = 0
+    elif playground[x][y] == 0:
+        if neighbors == 3:
+            playground[x][y] = 1
+    return update_status
+
+
+
+playground = create_playground()
+create_cells([(1,0),(2,1),(0,2),(1,2),(2,2)], playground)
+print(playground)
+print(get_neighbors(2,2))
